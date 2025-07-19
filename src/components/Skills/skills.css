@@ -8,6 +8,7 @@
     justify-content: center;
     text-align: center;
     margin: 0 auto;
+    background: radial-gradient(#0f0f25, #09090f);
 }
 
 .skillTitle {

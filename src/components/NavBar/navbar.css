@@ -1,5 +1,5 @@
 .navbar {
-    background: rgb(30, 30, 30);
+    background: radial-gradient(#0f0f25, #09090f);
     height: 5rem;
     width: 100vw;
     max-width: 75rem;
