@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './projects.css';
 import { FaExternalLinkAlt, FaGithub, FaTimes } from 'react-icons/fa';
+import studentManagementImg from '../../assets/student-management.png';
+
 
 import portfolioWebsiteImg from '../../assets/portfolio1.png';
 // import musicAppImg from '../../assets/music-app.png';
@@ -9,13 +11,23 @@ const projectList = [
   {
     title: 'Portfolio Website',
     image: portfolioWebsiteImg,
-    description: 'A personal portfolio website built using React.js to showcase my projects, skills, education, and professional experience. The site features a responsive layout, dynamic project modals, designed to provide a clear and interactive overview of my frontend development expertise, the portfolio emphasizes UI/UX aesthetics, accessibility, and modern web practices.',
+    description:
+      'A personal portfolio website built using React.js to showcase my projects, skills, education, and professional experience.',
     tech: ['HTML', 'CSS', 'JavaScript', 'React'],
     liveLink: 'https://kushagra-pareek-portfolio-q49s.vercel.app/',
     codeLink: 'https://github.com/7Kushagra/portfolio.git',
   },
-  
+  {
+    title: 'Student Management System',
+    image: studentManagementImg,
+    description:
+      'A full-stack web application developed to manage student records efficiently. The system supports adding, updating, deleting, and viewing student data with secure database integration and a clean user interface.',
+    tech: ['Python', 'MySQL', 'HTML', 'CSS'],
+    liveLink: '',
+    codeLink: 'https://github.com/7Kushagra/Student-management-system',
+  },
 ];
+
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -48,14 +60,25 @@ const Projects = () => {
               </div>
 
             <div className="modal-links">
-              <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /> Live</a>
-              <a href={activeProject.codeLink} target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
-            </div>
+  {activeProject.liveLink && (
+    <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer">
+      <FaExternalLinkAlt /> Live
+    </a>
+  )}
+  {activeProject.codeLink && (
+    <a href={activeProject.codeLink} target="_blank" rel="noopener noreferrer">
+      <FaGithub /> GitHub
+    </a>
+  )}
+</div>
+
           </div>
         </div>
       )}
     </section>
   );
 };
+
+
 
 export default Projects;
